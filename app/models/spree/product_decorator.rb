@@ -6,6 +6,7 @@ module Spree
 
     def duplicate_extra(old_product)
       duplicate_translations(old_product)
+      set_slug_via_hack_to_avoid_duplication(old_product)
     end
 
     private
@@ -14,6 +15,10 @@ module Spree
       old_product.translations.each do |translation|
         self.translations << translation.dup
       end
+    end
+
+    def set_slug_via_hack_to_avoid_duplication(old_product)
+      self.slug = "#{old_product.slug}-#{SecureRandom.uuid}"
     end
   end
 end
