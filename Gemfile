@@ -15,6 +15,9 @@ group :test do
   gem 'selenium-webdriver', '~> 2.34'
 end
 
-gem 'spree', path: '~/Projects/spree' #github: 'spree/spree', branch: '2-2-stable'
+gem 'pry-debugger'
+
+gem 'globalize', github: 'hypomodern/globalize', branch: 'fix-dup-translation'
+# gem 'spree', path: '~/Projects/spree' #github: 'spree/spree', branch: '2-2-stable'
 
 gemspec
